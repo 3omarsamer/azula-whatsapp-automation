@@ -1,0 +1,27 @@
+services:
+  azula-whatsapp-bridge:
+    build: .
+    container_name: azula-whatsapp-bridge
+    restart: unless-stopped
+
+    ulimits:
+      core: 0
+
+    environment:
+      PORT: "3001"
+      AZULA_API_KEY: "${AZULA_API_KEY}"
+
+    volumes:
+      - whatsapp_tokens:/app/tokens
+      - whatsapp_browser_data:/app/userDataDir
+      - whatsapp_bridge_data:/app/data
+
+    ports:
+      - "127.0.0.1:3001:3001"
+
+volumes:
+  whatsapp_tokens:
+
+  whatsapp_browser_data:
+
+  whatsapp_bridge_data:
