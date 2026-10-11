@@ -1,0 +1,30 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# WhatsApp sessions and private runtime data
+**/tokens/
+**/userDataDir/
+**/data/
+**/state.json
+**/sessions/
+**/logs/
+*.log
+
+# Dependencies and tooling
+**/node_modules/
+.DS_Store
+.vscode/
+.idea/
+
+# Archives and backups
+*.zip
+*.tar
+*.tar.gz
+*.bak
+*backup*
